@@ -6,4 +6,4 @@ end
 
 
 
-ails g change_comment_to_orders 
+##rails generate migration add_fieldname_to_tablename fieldname:string
