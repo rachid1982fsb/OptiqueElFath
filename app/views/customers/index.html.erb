@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Customers</h1>
+
+<table class="table table-bordered table-hover">
+  <thead class="table-light">
+    <tr>
+      <th><%= link_to "Name", :sort => "first_name"%> </th>
+      <th>Phone1</th>
+      <th>Phone2</th>
+      <th>Email</th>
+      <th>L r measurement</th>
+      <th>L l measurement</th>
+      <th>L add measurement</th>
+      <th>Address</th>
+      <th>Last d v date</th>
+      <th>Doctor name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @customers.each do |customer| %>
+      <tr>
+        <th scope="row"><%= link_to customer.first_name + " " + customer.last_name, customer %></th>
+        <td><%= customer.phone1 %></td>
+        <td><%= customer.phone2 %></td>
+        <td><%= customer.email %></td>
+        <td><%= customer.l_r_measurement %></td>
+        <td><%= customer.l_l_measurement %></td>
+        <td><%= customer.l_add_measurement %></td>
+        <td><%= customer.adress %></td>
+        <td><%= customer.last_d_v_date %></td>
+        <td><%= customer.doctor_name %></td>
+        <td><%= link_to 'New_Order', new_order_path(customer), class:"btn btn-outline-success btn-sm" %></td>
+        <td><%= link_to 'Delete', customer, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-outline-danger btn-sm" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Customer', new_customer_path, class:"btn btn-outline-secondary" %>
+

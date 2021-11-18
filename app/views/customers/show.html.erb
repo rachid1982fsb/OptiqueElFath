@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+
+<div class="card">
+  <div class="card-header">
+   <h2><%= @customer.first_name + " " + @customer.last_name %></h2>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title"> <strong>Phone Number:</strong> <%= @customer.phone1  + "  |  " + @customer.phone2 %>  </h5>
+    <h5 class="card-title">
+      <strong>Last Measurement</strong> => <strong>Right:</strong><%= @customer.l_r_measurement%>  
+                                           <strong>Left:</strong> <%= @customer.l_l_measurement%>  
+                                           <strong>Add:</strong> <%= @customer.l_add_measurement%> 
+    </h5>
+
+    <p class="card-text">
+      <strong>Email:</strong> <%= @customer.email%>  
+      <strong>Address:</strong> <%= @customer.adress%> 
+    </p>
+
+    <p class="card-text">
+      <strong>Doctor Name:</strong> <%= @customer.doctor_name%>  
+      <strong>Last Doctor Visit Date:</strong> <%= @customer.last_d_v_date%> 
+    </p>
+
+    <div class="actions">
+      <%= link_to 'Edit Customer', edit_customer_path(@customer),  class:"btn btn-outline-secondary me-md-2"%>
+    </div>
+  </div>
+</div>
+
+
+
+<p>
+  <strong>params:</strong>
+   <%= params[:id] %>
+
+</p>
+
+<br/>
+<br/>
+
+
+<% @cur_orders = @customer.orders %>
+
+<%= render 'layouts/table'%>
+
+
+<div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
+
+  <div class="actions">
+    <%= link_to 'Back', customers_path, class:"btn btn-outline-secondary" %>
+  </div>
+  <div class="actions">
+    <%= link_to 'New Order', new_order_path(@customer), class:"btn btn-outline-secondary"%>
+  </div>
+
+</div>
+
+
+
+
+
+

@@ -1,0 +1,33 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  frame_name: MyString
+  r_measurement: 1
+  l_measurement: 1
+  add_measurement: 1
+  Kind_of_glasses: MyString
+  glasses_type: MyString
+  indice: MyString
+  last_d_v_date: 2021-11-02
+  image_doctor_visit: MyString
+  glass_Cost_in: 1
+  glass_price_out: 1
+  total_price: 1
+  comment: MyString
+  customer: one
+
+two:
+  frame_name: MyString
+  r_measurement: 1
+  l_measurement: 1
+  add_measurement: 1
+  Kind_of_glasses: MyString
+  glasses_type: MyString
+  indice: MyString
+  last_d_v_date: 2021-11-02
+  image_doctor_visit: MyString
+  glass_Cost_in: 1
+  glass_price_out: 1
+  total_price: 1
+  comment: MyString
+  customer: two

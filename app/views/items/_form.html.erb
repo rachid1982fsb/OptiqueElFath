@@ -1,0 +1,73 @@
+<%= form_with(model: item, local: true) do |form| %>
+  <% if item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(item.errors.count, "error") %> prohibited this item from being saved:</h2>
+
+      <ul>
+        <% item.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cost_in %>
+    <%= form.number_field :cost_in %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price_out %>
+    <%= form.number_field :price_out %>
+  </div>
+
+  <div class="field">
+    <%= form.label :color %>
+    <%= form.text_field :color %>
+  </div>
+
+  <div class="field">
+    <%= form.label :d1 %>
+    <%= form.number_field :d1 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :d2 %>
+    <%= form.number_field :d2 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :d3 %>
+    <%= form.number_field :d3 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :d4 %>
+    <%= form.number_field :d4 %>
+  </div>
+  quantity
+  <div class="field">
+    <%= form.label :quantity %>
+    <%= form.number_field :quantity %>
+  </div>
+
+  <div class="field for m-group col-md-4">
+        <%= form.label :image %>
+        <%= form.file_field :image, 
+        class:"form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :comment %>
+    <%= form.text_field :comment %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

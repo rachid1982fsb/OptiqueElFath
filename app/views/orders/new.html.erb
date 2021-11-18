@@ -1,0 +1,12 @@
+
+<% @order.customer_id=params[:format]%>
+<div class="card">
+  <div class="card-header"> 
+  <% title="New Order " %>
+    <h2><%=title%>for  <%= @order.customer.first_name%></h2>
+  </div>
+
+  <div class="card-body">
+    <%= render 'form', order: @order  %>
+  </div>
+</div>

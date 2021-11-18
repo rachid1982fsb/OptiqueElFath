@@ -1,0 +1,67 @@
+<p id="notice"><%= notice %></p>
+
+<h2>There is <%= @item.quantity %> left of this frame
+</h2>
+
+<p>
+  <strong>Name:</strong>
+  <%= @item.name %>
+</p>
+
+<p>
+  <strong>Cost in:</strong>
+  <%= @item.cost_in %>
+</p>
+
+<p>
+  <strong>Price out:</strong>
+  <%= @item.price_out %>
+</p>
+
+<p>
+  <strong>Color:</strong>
+  <%= @item.color %>
+</p>
+
+<p>
+  <strong>D1:</strong>
+  <%= @item.d1 %>
+</p>
+
+<p>
+  <strong>D2:</strong>
+  <%= @item.d2 %>
+</p>
+
+<p>
+  <strong>D3:</strong>
+  <%= @item.d3 %>
+</p>
+
+<p>
+  <strong>D4:</strong>
+  <%= @item.d4 %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @item.quantity %>
+</p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @item.comment %>
+</p>
+<p>hello</p>
+<% if @item.image.attached?%>
+<div style="width:400px" >
+  <strong>image:</strong>
+  <%= image_tag @item.image, style:'width:100%' %>
+</div>
+<% end %>
+    
+  </div>
+</div>
+
+<%= link_to 'Edit', edit_item_path(@item) %> |
+<%= link_to 'Back', items_path %>

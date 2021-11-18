@@ -1,0 +1,143 @@
+<p id="notice"><%= notice %></p>
+
+<div class="card">
+  <div class="card-header">
+    <h3> Order Number  <%= @order.id %> for  <%= @order.customer.last_name + " " + @order.customer.first_name%>
+    <%if @order.completed %>
+    is completed
+    <% end %>
+    </h3>
+    
+  </div>
+
+  <div class="card-body">
+  <div class="row g-3">
+   <div class="field for m-group col-md-4">
+    <p class="form-control">
+    <strong>R measurement:</strong>
+    <%= @order.r_measurement %>
+    </p>
+    </div>
+    <div class="field for m-group col-md-4">
+    <p class="form-control">
+    <strong>L measurement:</strong>
+    <%= @order.l_measurement %>
+    </p>
+    </div>
+
+    <div class="field for m-group col-md-4">
+    <p class="form-control">
+    <strong>Add measurement:</strong>
+    <%= @order.add_measurement %>
+    </p>
+    </div>
+    <div class="field for m-group col-md-4">
+    <p class="form-control">
+    <strong>Frame Name:</strong>
+    <%= @order.item.name %>
+    </p>
+
+    </div>
+    <div class="field for m-group col-md-4">
+
+    <p class="form-control">
+         <strong>Kind of glasses:</strong>
+         <%= @order.Kind_of_glasses %>
+    </p>
+    </div>
+    <div class="field for m-group col-md-4">
+
+    <p class="form-control">
+      <strong>Glasses type:</strong>
+      <%= @order.glasses_type %>
+    </p>
+    </div>
+    <div class="field for m-group col-md-4">
+    <p class="form-control">
+    <strong>Indice:</strong>
+    <%= @order.indice %>
+    </p>
+    </div>
+  
+    <div class="field for m-group col-md-4">
+    <p class="form-control">
+    <strong>Last d v date:</strong>
+    <%= @order.last_d_v_date %>
+    </p>
+    </div>
+    <div class="field for m-group col-md-4">
+    <p class="form-control text-uppercase">
+<strong>Doctor :</strong>
+<%= @order.image_doctor_visit %>
+</p>
+    </div>
+    <div class="field for m-group col-md-4">
+    <p class="form-control">
+<strong>Return date:</strong>
+<%= @order.return_date %>
+</p>
+    </div>
+    <div class="field for m-group col-md-4">
+    <p class="form-control">
+<strong>Glass cost in:</strong>
+<%= @order.glass_Cost_in %>
+</p>
+    </div>
+    <div class="field for m-group col-md-4">
+    <p class="form-control">
+<strong>Glass price out:</strong>
+<%= @order.glass_price_out %>
+</p>
+
+</div>
+<div class="field for m-group col-md-4">
+<p class="form-control">
+<strong>Amount Paid:</strong>
+<%= @order.amount_paid %>
+</p>
+    </div>
+    <div class="field for m-group col-md-4">
+    <p class="form-control">
+<strong>Total price:</strong>
+<%= @order.total_price %>
+</p>
+    </div>
+    <div class="field for m-group col-md-4">
+    <p class="form-control">
+<strong>Comment:</strong>
+<%= @order.comment %>
+</p>
+    </div>
+    </div>
+
+     
+
+<% if @order.image.attached?%>
+<div style="width:400px" >
+  <strong>Doctor Visit:</strong>
+  <%= image_tag @order.image, style:'width:100%' %>
+</div>
+<% end %>
+<% if @order.item.image.attached?%>
+<div style="width:400px" >
+  <strong>Frame:</strong>
+  <%= link_to image_tag(@order.item.image, style:'width:100%'), item_path(@order.item.id) %>
+</div>
+<% end %>
+    
+  </div>
+</div>
+
+
+
+<div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
+
+  <div class="actions">
+    <%= link_to 'Back', orders_path, class:"btn btn-outline-secondary" %>
+  </div>
+
+  <div class="actions">
+    <%= link_to 'Edit', edit_order_path(@order),  class:"btn btn-outline-secondary me-md-2"%>
+  </div>
+
+</div>

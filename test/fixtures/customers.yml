@@ -1,0 +1,27 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  first_name: MyString
+  last_name: MyString
+  phone1: 1
+  phone2: 1
+  email: MyString
+  l_r_measurement: 1
+  l_l_measurement: 1
+  l_add_measurement: 1
+  adress: MyString
+  last_d_v_date: 2021-11-02
+  doctor_name: MyString
+
+two:
+  first_name: MyString
+  last_name: MyString
+  phone1: 1
+  phone2: 1
+  email: MyString
+  l_r_measurement: 1
+  l_l_measurement: 1
+  l_add_measurement: 1
+  adress: MyString
+  last_d_v_date: 2021-11-02
+  doctor_name: MyString

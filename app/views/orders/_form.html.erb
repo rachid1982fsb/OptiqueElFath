@@ -1,0 +1,127 @@
+<%= form_with(model: order, local: true) do |form| %>
+  <% if order.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(order.errors.count, "error") %> prohibited this order from being saved:</h2>
+
+      <ul>
+        <% order.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <% cur_customer = params[:format] || order.customer_id%>
+  
+  <% if cur_customer %>
+  <% current_customer = Customer.find(cur_customer)%>
+  <div class="row g-3">
+      
+      <div class="field for m-group col-md-3">
+      <%= form.label :item_id %>
+      <%= form.collection_select(:item_id, Item.all, :id, :desplay_name, :required => true)%>
+      </div>
+
+      <div class="field for m-group col-md-3">
+        <%= form.label :Kind_of_glasses %>
+        <%= form.select :Kind_of_glasses, :collection => kind_glass_display  %>
+
+      </div>
+    
+      <div class="field for m-group col-md-3">
+        <%= form.label :glasses_type %>
+        <%= form.select :glasses_type, :collection => glasses_display %>
+      </div>
+
+      
+      <div class="field for m-group col-md-3">
+        <%= form.label :indice %>
+        <%= form.select :indice,  :collection => indice_display   %>
+      </div>
+    
+      <div class="field for m-group col-md-2">
+          <%= form.label :r_measurement %>
+          <%= form.text_field :r_measurement, value: current_customer.l_r_measurement,
+          class:"form-control", :required => true %>
+        </div>
+      
+        <div class="field for m-group col-md-2">
+          <%= form.label :l_measurement %>
+          <%= form.text_field :l_measurement,  value: current_customer.l_l_measurement,
+          class:"form-control", :required => true %>
+        </div>
+      
+        <div class="field for m-group col-md-2">
+          <%= form.label :add_measurement %>
+          <%= form.text_field :add_measurement, value: current_customer.l_add_measurement,
+          class:"form-control", :required => true %>
+        </div>
+    
+      
+    
+      <div class="field for m-group col-md-4">
+      <label>Doctor Name</label>
+      <%= form.text_field :image_doctor_visit, value: current_customer.doctor_name,
+      class:"form-control" %>
+      </div>
+
+    
+      <div class="field for m-group col-md-4">
+        <%= form.label :glass_price_out %>
+        <%= form.number_field :glass_price_out, 
+        class:"form-control" %>
+      </div>
+      
+      <div class="field for m-group col-md-4">
+        <%= form.label :amount_paid %>
+        <%= form.number_field :amount_paid, 
+        class:"form-control" %>
+      </div>
+      <div class="field for m-group col-md-4">
+        <%= form.label :total_price %>
+        <%= form.number_field :total_price, 
+        class:"form-control" %>
+      </div>
+    
+      <div class="field for m-group col-md-4">
+        <%= form.label :comment %>
+        <%= form.text_field :comment, 
+        class:"form-control" %>
+      </div>
+
+      <div class="field for m-group col-md-4">
+        <%= form.label :last_d_v_date %>
+        <%= form.date_select :last_d_v_date, value: current_customer.l_add_measurement, 
+        class:"form-control" %>
+      </div>
+
+      <div class="field for m-group col-md-4">
+        <%= form.label :return_date %>
+        <%= form.date_select :return_date, 
+        class:"form-control" %>
+      </div>
+
+      <div class="field for m-group col-md-4">
+        <%= form.label :image %>
+        <%= form.file_field :image, 
+        class:"form-control" %>
+      </div>
+     
+      <div class="field for m-group col-md-4">
+        <%= form.number_field :customer_id, id: :order_customer_id, value: cur_customer, type: :hidden, 
+        class:"form-control" %>
+      </div>
+    
+      <p> <strong>params:</strong> <%= params %> </p>
+    
+      <div class="actions">
+        <%= form.submit %>
+      </div>
+      <div class="actions">
+        <%= link_to 'Back', orders_path %>
+      </div>
+    </div>
+  <% end %>
+<% end %>
+    
+
