@@ -54,7 +54,7 @@
         <td><%= order.glass_price_out %></td>
         <td><%= order.amount_paid %></td>
         <td><%= order.total_price %></td>
-        <td><%= total_gain %></td>
+        <td class="table-primary"><%= total_gain %></td>
         <td><%= order.completed %></td>
         <td><%= link_to 'Edit_Order', edit_order_path(order), class:"btn btn-outline-success btn-sm" %></td>
         <td><%= link_to 'Delete', order, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-outline-danger btn-sm" %></td>
@@ -80,7 +80,7 @@
         <td><%= order.glass_price_out %></td>
         <td><%= order.amount_paid %></td>
         <td><%= order.total_price %></td>
-        <td><%= total_gain %></td>
+        <td class="table-primary"><%= total_gain %></td>
         <td><%= order.completed %></td>
         <td><%= link_to 'Edit_Order', edit_order_path(order), class:"btn btn-outline-success btn-sm" %></td>
         <td><%= link_to 'Delete', order, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-outline-danger btn-sm" %></td>
