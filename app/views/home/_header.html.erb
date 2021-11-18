@@ -33,6 +33,7 @@
           <% else %>
             <li><%= link_to 'SignOut', destroy_model_session_path, method: :delete, class:"dropdown-item" %></li>
             <li><hr class="dropdown-divider"></li>
+            <li><%= link_to 'SignUp', new_model_registration, class:"dropdown-item" %></li>
             <li><%= link_to 'Orders', home_admin_path, class:"dropdown-item" %></li>
           <% end %>
           </ul>
