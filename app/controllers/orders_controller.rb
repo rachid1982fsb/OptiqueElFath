@@ -5,11 +5,21 @@ class OrdersController < ApplicationController
   def index
     @orders = Order.order(params[:sort])
   end
+
+ # def search_orders
+  #  if @orders = Order.all.filter{|order| order.phone1.include?(params[:search])}
+   #   redirect_to orders_path(@orders)
+   # end
+ # end
  
 
   # GET /orders/1 or /orders/1.json
   def show
   end
+  #def by_month
+    #@orders = Order.all
+   # render :index
+  # end
 
   # GET /orders/new
   def new

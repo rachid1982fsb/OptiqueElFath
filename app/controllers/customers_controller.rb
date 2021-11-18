@@ -5,7 +5,7 @@ class CustomersController < ApplicationController
   def index
     @customers = Customer.order(params[:sort])
     if params[:search]
-      search_customers
+      search_customers()
     end
   end
 
