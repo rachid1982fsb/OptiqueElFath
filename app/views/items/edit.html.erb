@@ -1,6 +1,8 @@
 <h1>Editing Item</h1>
+<% if model_signed_in? %>
 
 <%= render 'form', item: @item %>
 
 <%= link_to 'Show', @item %> |
 <%= link_to 'Back', items_path %>
+<% end %>

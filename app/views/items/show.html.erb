@@ -7,11 +7,12 @@
   <strong>Name:</strong>
   <%= @item.name %>
 </p>
-
+<% if model_signed_in? %>
 <p>
   <strong>Cost in:</strong>
   <%= @item.cost_in %>
 </p>
+<% end %>
 
 <p>
   <strong>Price out:</strong>
