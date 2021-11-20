@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Thanks for ordering , <%= @order.customer.first_name %>!</h1>
+    <p>Thanks for ordering and have a great day! Now have amazing day! below is the order details:</p>
+  <div class="card">
+    <div class="card-header">
+       <h5> 
+           Order Number  <%= @order.id %> for  <%= @order.customer.last_name + " " + @order.customer.first_name%>
+       </h5>
+    </div>
+    
+  </lo>
+    <li>
+    <strong>R measurement:</strong>
+    <%= @order.r_measurement %>
+    </li>
+    <li>
+    <strong>L measurement:</strong>
+    <%= @order.l_measurement %>
+    </li> 
+    <li>
+    <strong>Add measurement:</strong>
+    <%= @order.add_measurement %>
+    </li>
+    <li>
+    <strong>Frame Name:</strong>
+    <%= @order.item.name %>
+    </li>
+  </lo>
+  </div>
+  </body>
+</html>
